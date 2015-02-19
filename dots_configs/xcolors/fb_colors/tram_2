@@ -1,0 +1,24 @@
+-e #!/bin/bash
+
+# zbtram_2
+
+# *background: #000000
+# *foreground: #f9f9f9
+
+echo -en "\e]P0000000"
+
+echo -en "\e]P16c6658"
+echo -en "\e]P2bcc4bc"
+echo -en "\e]P352524B"
+echo -en "\e]P4554A38"
+echo -en "\e]P56C665B"
+echo -en "\e]P66F7888"
+echo -en "\e]P77A8379"
+echo -en "\e]P87A8695"
+echo -en "\e]P9867666"
+echo -en "\e]PA8D8777"
+echo -en "\e]PB989FA8"
+echo -en "\e]PCAEB6C5"
+echo -en "\e]PDBCC4CB"
+echo -en "\e]PEC8CFD4"
+echo -en "\e]PFE5EAF0"

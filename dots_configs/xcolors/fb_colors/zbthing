@@ -1,0 +1,24 @@
+-e #!/bin/bash
+
+# zbthing
+
+# *background: #000000
+# *foreground: #f9f9f9
+
+echo -en "\e]P0000000"
+
+echo -en "\e]P1353532"
+echo -en "\e]P23E3F42"
+echo -en "\e]P33E403D"
+echo -en "\e]P4433C33"
+echo -en "\e]P548443A"
+echo -en "\e]P64B4C47"
+echo -en "\e]P7655C4D"
+echo -en "\e]P869583B"
+echo -en "\e]P96A6657"
+echo -en "\e]PA767467"
+echo -en "\e]PB7E8079"
+echo -en "\e]PC83775E"
+echo -en "\e]PD898776"
+echo -en "\e]PEA5A391"
+echo -en "\e]PFD5D1BA"

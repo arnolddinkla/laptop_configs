@@ -1,0 +1,54 @@
+"exe=`cat ~/.dmenu_custom | dmenu -b -fn '-*-tamsyn-bold-r-*-*-15-*-*-*-*-*-*-*' -nb grey81 -nf grey47 -sb grey81 -sf PaleVioletRed4` && eval "exec x-terminal-emulator -e $exe""
+mod4 + F2
+
+"9menu -bg grey81 -fg PaleVioletRed4 -popup -teleport -font -*-tamsyn-bold-r-*-*-13-*-*-*-*-*-*-* -file ~/.9menurc"
+mod4 + F1
+
+"dmenu_run -fn -*-tamsyn-bold-r-*-*-15-*-*-*-*-*-*-* -nb grey81 -nf grey47 -sb grey81 -sf PaleVioletRed4"
+mod4 + F3
+
+# volume control
+"x-terminal-emulator -e alsamixer"
+mod4 + F8
+
+"x-terminal-emulator -e tmux"
+Shift + mod4 + t
+
+"x-terminal-emulator -e ranger"
+Shift + mod4 + r
+
+"x-terminal-emulator"
+Shift + mod4 + u
+
+"x-terminal-emulator -e nano"
+Shift + mod4 + n
+
+"google-chrome"
+Shift + mod4 + w
+
+"osd_vol -"
+mod4 + F9
+
+"osd_vol +"
+mod4 + F10
+
+"osd_vol t"
+mod4 + F11
+
+"sudo pm-suspend"
+Control + Escape
+
+#"dmenu_run"
+#mod4 + p
+
+"sudo pkill X"
+mod4 + Delete
+
+"sudo pkill X"
+Shift + mod4 + q
+
+"scrotnow"
+Print
+
+"scrotsel"
+Shift + Print

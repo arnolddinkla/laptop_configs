@@ -1,0 +1,27 @@
+exit menu:exit
+run...:dmenu_run
+web:google-chrome
+menu:x-terminal-emulator -e bbq
+tmux:x-terminal-emulator -e tmux 
+vi:x-terminal-emulator -e vi
+nano:x-terminal-emulator -e nano
+ranger:x-terminal-emulator -e ranger 
+mc:x-terminal-emulator -e mc 
+alsamixer:x-terminal-emulator -e alsamixer 
+moc:x-terminal-emulator -e mocp 
+ceni:x-terminal-emulator -geometry 80x25 -e sudo ceni
+nload:x-terminal-emulator -e nload
+:
+htop:x-terminal-emulator -e htop
+powertop:x-terminal-emulator -e sudo powertop
+iftop:x-terminal-emulator -e sudo iftop
+ncdu:x-terminal-emulator -e sudo ncdu /
+:
+edit startup:x-terminal-emulator -e nano ~/.xinitrc
+edit keybinds:x-terminal-emulator -e nano ~/.xbindkeysrc
+edit menu:x-terminal-emulator -e nano ~/.9menurc
+exit menu:exit
+:
+logout: pkill X
+reboot: sudo /sbin/reboot
+shutdown: sudo /sbin/poweroff

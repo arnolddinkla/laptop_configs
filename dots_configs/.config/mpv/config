@@ -1,0 +1,11 @@
+--osd-scale-by-window=no
+--osd-font-size=20
+--video-zoom=-0.5
+--osd-bar=yes
+--osd-duration=3600000
+--osd-bar-align-y=0.98
+--osd-color='#ff0000'
+--osd-border-size=0
+--osd-bar-w=100
+--osd-bar-h=0.1
+--osd-level=1

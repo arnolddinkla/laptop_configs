@@ -1,0 +1,23 @@
+#!/bin/bash
+#feh --montage --thumbnails ~/.colors/*.png &
+ls ~/xcolors/xcolor_code/
+echo "Which theme to use (without extension)?"
+read THEME
+TMPFILE=/tmp/dkeger_store
+touch $TMPFILE
+XRSREAL=/home/$USER/.Xresources
+XRSFAKE=/home/$USER/.Xresources_new
+SELECTED=/home/$USER/xcolors/xcolor_code/$THEME
+FULLNAME=("#include <${SELECTED}>")
+sed '/include/d' < $XRSREAL > $TMPFILE
+mv $TMPFILE $XRSREAL
+echo -e ${FULLNAME} >> $XRSREAL
+echo "$XRSREAL written..."
+xrdb $XRSREAL
+echo $THEME > .xcolorselect
+echo "$XRSREAL merged..."
+echo "You can now close this terminal."
+exit 0
+
+
+

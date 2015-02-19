@@ -1,0 +1,3 @@
+#!/bin/bash
+export FONTCONFIG_FILE=/dev/null
+fbterm

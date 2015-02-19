@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "These fonts can be used in your framebuffer. Edit the .fbtermrc file or start the fbterm like, eg.
+
+	fbterm-bi wallpaper.png -n 'mono' -s 12
+
+List of usable fonts:"
+
+fc-list | cut -d : -f 2 | sort -u | uniq | more

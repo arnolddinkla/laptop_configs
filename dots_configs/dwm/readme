@@ -1,0 +1,3 @@
+this is dwm-6.1 patched with useless gaps (modified by me for correct gaps), per-tag, bar padding increased to 15, and my minor monocle enhancement.
+
+config.h configured to open google-chrome with 'web' tag and mpv with 'film' tag.

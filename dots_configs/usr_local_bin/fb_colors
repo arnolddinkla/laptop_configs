@@ -1,0 +1,8 @@
+#!/bin/bash
+cd ~/xcolors/fb_colors
+ls
+echo
+echo "Usage: ./xcolors/fb_colors/theme_name"
+echo "Note:  Framebuffer consoles require you to switch to another TTY and back."
+echo
+

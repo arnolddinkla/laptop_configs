@@ -1,0 +1,33 @@
+#!/bin/bash
+
+. /usr/share/doc/dialog/examples/setup-vars
+. /usr/share/doc/dialog/examples/setup-tempfile
+
+# grab all colors and pipe into a list
+ls ~/xcolors/fb_colors/ > /usr/local/share/fbcolors
+tempfile=/usr/local/bin/temporaryfb
+COLOR_FILE=/usr/local/share/fbcolors
+
+[[ ! -f "$COLOR_FILE" ]] && echo "Cannot find fbcolors, using defaults..." && cp /etc/skel/xcolors/fb_colors /usr/local/share/fbcolors
+
+ar=()
+while read n s ; do
+	ar+=($n "$s")
+done < $COLOR_FILE
+
+dialog --clear --menu "Framebuffer colors" 0 0 0 "${ar[@]}" 2> $tempfile
+retval=$?
+case $retval in
+	$DIALOG_CANCEL)
+	exit 0;;
+esac
+~/xcolors/fb_colors/`cat $tempfile`
+echo "~/xcolors/fb_colors/`cat $tempfile`" > ~/.fbselect
+clear
+cat $tempfile
+colorview
+
+env-info
+exit 0
+
+
