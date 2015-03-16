@@ -1,0 +1,1 @@
+"`cat ~/.dmenu_custom | dmenu -l 10 -w .075 -g mc -fn '-*-tamsyn-bold-r-*-*-15-*-*-*-*-*-*-*' -nb '#d4d0cd' -nf grey47 -sb '#d4d0cd' -sf PaleVioletRed4`"

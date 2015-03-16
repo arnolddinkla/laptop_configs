@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "These partitions are now mounted in /etc/fstab:"
+echo "# from device /dev/sda:"
+sudo mount | awk '/^\/dev\/sda/ {print $1,"\t",$3,"\t",$5,"\tdefaults\t0","\t0"}'
+echo "# from device /dev/sdb:"
+sudo mount | awk '/^\/dev\/sdb/ {print $1,"\t",$3,"\t",$5,"\tdefaults\t0","\t0"}'
+echo "# from device /dev/sdc:"
+sudo mount | awk '/^\/dev\/sdc/ {print $1,"\t",$3,"\t",$5,"\tdefaults\t0","\t0"}'
+echo "To add partitions, run 'mkmnt'. To add removable drives, run 'pmount'."

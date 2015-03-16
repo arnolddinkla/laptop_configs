@@ -1,0 +1,5 @@
+#!/bin/bash
+modkey=$(grep 'Mod.*Mask' ~/dwm-6.0/config.h | sed 's/#define//')
+message=$(grep XK ~/dwm-6.0/config.h | sed 's/{//' |awk '{$1=$1;print}' | awk -F ',' '{ print $1 $2 $3 }')
+dialog --title "$modkey" --infobox "$message" 0 0
+read myass

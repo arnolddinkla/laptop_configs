@@ -1,0 +1,17 @@
+Mod4 + Shift + t = tmux
+Mod4 + Shift + u = urxvt
+Mod4 + Shift + r = ranger
+Mod4 + Shift + n = nano
+Mod4 + Shift + w = web browser
+
+Mod4 + Shift + v = play videos
+Mod4 + Shift + m = play music
+
+Mod4 + Shift + Enter = xterm
+
+Mod4 + F1 = menu
+
+Mod4 + Control + l = logout of session
+Mod4 + Control + r = reboot
+Mod4 + Control + s = shutdown
+

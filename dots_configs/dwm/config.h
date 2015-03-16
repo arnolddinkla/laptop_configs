@@ -2,13 +2,13 @@
 
 /* appearance */
 static const char font[]            = "-*-tamsyn-bold-r-*-*-13-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "grey47";
-static const char normbgcolor[]     = "grey81"; /* bg color of tags */
+static const char normbordercolor[] = "#d4d0cd";
+static const char normbgcolor[]     = "#d4d0cd"; /* bg color of tags */
 static const char normfgcolor[]     = "grey47"; /* color of text in tags */
 static const char selbordercolor[]  = "PaleVioletRed4";
-static const char selbgcolor[]      = "grey81"; /* color of selected tag */
+static const char selbgcolor[]      = "#d4d0cd"; /* color of selected tag */
 static const char selfgcolor[]      = "PaleVioletRed4"; /* bg color of selected tag orange was ff6600  */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 3;        /* gap pixel between windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
@@ -18,9 +18,10 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const char *tags[] = { "term", "web", "file", "film", "music" };
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Google-chrome",     NULL,       NULL,       1 << 1,            False,        -1 },
-	{ "mpv",  NULL,       NULL,       1 << 3,       False,       -1 },
+	/* class               instance    title       tags mask     isfloating   monitor */
+	{ "Google-chrome",     NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "mpv",               NULL,       NULL,       1 << 3,       False,       -1 },
+	{ NULL,                NULL,       "MOC",      1 << 4,       False,       -1 },
 };
 
 /* layout(s) */
@@ -47,15 +48,36 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "x-terminal-emulator", NULL };
-static const char *webcmd[]  = { "google-chrome-stable", NULL };
+static const char *dmenucmd[]    = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]     = { "xterm", NULL };
+static const char *webcmd[]      = { "google-chrome-stable", NULL };
+static const char *tmuxcmd[]     = { "tmux", NULL };
+static const char *URxvtcmd[]    = { "urxvt", NULL };
+static const char *rangercmd[]   = { "Ranger", NULL };
+static const char *nanocmd[]     = { "Nano", NULL };
+static const char *pvidcmd[]     = { "Mpv", NULL };
+static const char *pmuscmd[]     = { "Mocp", NULL };
+static const char *menucmd[]     = { "Menu", NULL };
+static const char *logoutcmd[]   = { "Logout", NULL };
+static const char *rebootcmd[]   = { "Reboot", NULL };
+static const char *shutdowncmd[] = { "Shutdown", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_w, spawn,               {.v = webcmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = tmuxcmd } },
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = URxvtcmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rangercmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = nanocmd } },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = pvidcmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pmuscmd } },
+	{ MODKEY,                       XK_F1,     spawn,          {.v = menucmd } },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          {.v = logoutcmd } },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rebootcmd } },
+	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = shutdowncmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

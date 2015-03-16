@@ -10,12 +10,12 @@ URxvt*colorBD:          #7DFF00
 URxvt*colorUL:          #859900
 URxvt*cursorBlink:      true
 
-URxvt*cursorColor:  #00ff00
+URxvt*cursorColor:      #00ff00
 
 URxvt*transparent:      true
-URxvt*shading: 90
-URxvt*geometry: 81x26
-!URxvt*fading: 10
+URxvt*shading:          110
+URxvt*geometry:         81x26
+!URxvt*fading:          10
 
 URxvt*allow_bold:       true
 

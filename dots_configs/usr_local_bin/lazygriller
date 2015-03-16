@@ -1,0 +1,15 @@
+#!/bin/bash
+# lazygriller - copies relevant files from /home/$USER to /etc/skel
+SKEL=/etc/skel
+cd /home/$USER
+
+sudo mkdir -p /etc/skel/git
+sudo mkdir -p /etc/skel/.config
+sudo cp -r /home/$USER/git /etc/skel/git
+sudo cp .9menurc $SKEL
+sudo cp .dmenu_custom $SKEL
+sudo cp .xbindkeysrc $SKEL
+sudo cp .xinitrc $SKEL
+sudo cp .bash_profile $SKEL
+sudo cp .bash_aliases $SKEL
+

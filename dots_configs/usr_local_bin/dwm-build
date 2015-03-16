@@ -1,0 +1,13 @@
+#!/bin/bash
+DWMDIR=/home/$USER/dwm-6.0
+
+cd $DWMDIR
+nano config.h
+sudo make install
+
+cd ~
+
+dwmkeys
+
+[[ -z $DISPLAY && $TERM = "linux" ]] && exec startx
+

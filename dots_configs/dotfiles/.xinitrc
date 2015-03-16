@@ -3,8 +3,6 @@
 
 # hash fonts
 xset +fp /usr/share/fonts/local
-#xset +fp /usr/share/fonts/X11
-#xset +fp /usr/share/fonts/truetype
 xset fp rehash
 
 # disable blanking
@@ -23,9 +21,6 @@ xrdb -merge ~/.Xresources &
 # Ctrl-Alt-Backspace kills the X session
 setxkbmap -option terminate:ctrl_alt_bksp &
 
-# make some keybindings work
-xbindkeys &
-
 KERNEL=$(uname -smr)
 while true
 do
@@ -36,7 +31,6 @@ do
    BATT="$(cat /sys/class/power_supply/C1A6/capacity)"
    MEM="$( free -m | grep "cache:" | awk '{print $3 "mb"}' )"
    VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
-#   MUSIC="$(mocp -Q %file | sed 's|/home/gurtid/Music/| |' | sed "s/\..*//")""    ""$(mocp -Q%artist\ "  "\ %ct\ -\ %tt)"
    MUSIC="$(mocp -Q %state\ ""\ %artist\ "  "\ %song\ "  "\ %ct\ -\ %tt)"
 if [ $marquis -eq "0" ];then
        xsetroot -name "$KERNEL >> $LOCALTIME  "
@@ -63,6 +57,4 @@ fi
    sleep 5s
 done &
 
-
 exec /usr/local/bin/dwm
-
